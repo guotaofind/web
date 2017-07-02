@@ -1,0 +1,28 @@
+<h1>行列转换</h1>
+<button (click)="onChange()" kendoButton [primary]="true">旋转</button>
+<div class="container-fluid">
+  <div class="col-md-3">
+    <table *ngIf="change" class="table">
+      <tr>
+        <th>性别</th>
+        <th>数量</th>
+      </tr>
+      <tr *ngFor="let people of peoples">
+        <td>{{people.sex}}</td>
+        <td>{{people.count}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <table *ngIf="!change" class="table">
+      <tr>
+        <th>性别</th>
+        <td *ngFor="let people of peoples">{{people.sex}}</td>
+      </tr>
+      <tr>
+        <th>数量</th>
+        <td *ngFor="let people of peoples">{{people.count}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

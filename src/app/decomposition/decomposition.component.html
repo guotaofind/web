@@ -1,0 +1,10 @@
+<h1>分解质因数</h1>
+<form #numberForm="ngForm" (ngSubmit)="onSubmit()">
+  <label [for]="numberBox">请输入大于或等于2的正整数:</label><br />
+  <kendo-numerictextbox
+    name="numberBox" #numberBox [(ngModel)]="number" [min]="2" [max]="999999999999999"
+    [autoCorrect]="true" [format]="'n0'" [decimals]="0" required (valueChange)="onChange()"
+  ></kendo-numerictextbox>
+  <app-submitted [result]="result" [(submitted)]="submitted"></app-submitted><br />
+  <button type="submit" kendoButton [primary]="true" [disabled]="!numberForm.valid">分解</button>
+</form>
